@@ -1,0 +1,171 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "test",
+            "password": "1234",
+            "watched": [
+                {
+                    "movie_id": 4,
+                    "rating": 3
+                },
+                {
+                    "movie_id": 5,
+                    "rating": 1
+                },
+                {
+                    "movie_id": 6,
+                    "rating": null
+                },
+                {
+                    "movie_id": 8,
+                    "rating": null
+                },
+                {
+                    "movie_id": 10,
+                    "rating": 1
+                },
+                {
+                    "movie_id": 13,
+                    "rating": null
+                },
+                {
+                    "movie_id": 14,
+                    "rating": null
+                },
+                {
+                    "movie_id": 15,
+                    "rating": null
+                },
+                {
+                    "movie_id": 7,
+                    "rating": null
+                }
+            ],
+            "watchlist": [
+                4,
+                9,
+                11,
+                12
+            ],
+            "moods": []
+        },
+        {
+            "id": 2,
+            "username": "miruna",
+            "password": "m",
+            "watched": [
+                {
+                    "movie_id": 4,
+                    "rating": null
+                }
+            ],
+            "watchlist": [
+                4
+            ],
+            "moods": []
+        },
+        {
+            "id": 3,
+            "username": "mir",
+            "password": "1234",
+            "watched": [],
+            "watchlist": [],
+            "moods": []
+        },
+        {
+            "id": 4,
+            "username": "miri",
+            "password": "1234",
+            "watched": [],
+            "watchlist": [],
+            "moods": []
+        }
+    ],
+    "movies": [
+        {
+            "id": 4,
+            "title": "Titanic",
+            "description": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fianc\u00e9. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death\u2014on its first and last voyage\u2014on April 15, 1912.",
+            "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+            "tmdb_id": 597
+        },
+        {
+            "id": 5,
+            "title": "Lilo & Stitch",
+            "description": "The wildly funny and touching story of a lonely Hawaiian girl and the fugitive alien who helps to mend her broken family.",
+            "poster_path": "/7c5VBuCbjZOk7lSfj9sMpmDIaKX.jpg",
+            "tmdb_id": 552524
+        },
+        {
+            "id": 6,
+            "title": "Thunderbolts*",
+            "description": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+            "poster_path": "/hBH50Mkcrc4m8x73CovLmY7vBx1.jpg",
+            "tmdb_id": 986056
+        },
+        {
+            "id": 7,
+            "title": "Titanic",
+            "description": "Unhappily married, Julia Sturges decides to go to America with her two children on the Titanic. Her husband, Richard also arranges passage on the luxury liner so as to have custody of their two children. All this fades to insignificance once the ship hits an iceberg.",
+            "poster_path": "/rEPzO9I6LCk6Mxg1X4BsBk6oA3V.jpg",
+            "tmdb_id": 16535
+        },
+        {
+            "id": 8,
+            "title": "The Accountant\u00b2",
+            "description": "When an old acquaintance is murdered, Wolff is compelled to solve the case. Realizing more extreme measures are necessary, Wolff recruits his estranged and highly lethal brother, Brax, to help. In partnership with Marybeth Medina, they uncover a deadly conspiracy, becoming targets of a ruthless network of killers who will stop at nothing to keep their secrets buried.",
+            "poster_path": "/kMDUS7VmFhb2coRfVBoGLR8ADBt.jpg",
+            "tmdb_id": 870028
+        },
+        {
+            "id": 9,
+            "title": "Meet Joe Black",
+            "description": "Bill Parrish has it all - success, wealth and power. Days before his 65th birthday, he receives a visit from a mysterious stranger, Joe Black, who soon reveals himself as Death. In exchange for extra time, Bill agrees to serve as Joe's earthly guide. But will he regret his choice when Joe unexpectedly falls in love with Bill's beautiful daughter Susan?",
+            "poster_path": "/fDPAjvfPMomkKF7cMRmL5Anak61.jpg",
+            "tmdb_id": 297
+        },
+        {
+            "id": 10,
+            "title": "Meet Joe Black",
+            "description": "",
+            "poster_path": "/fDPAjvfPMomkKF7cMRmL5Anak61.jpg",
+            "tmdb_id": 9
+        },
+        {
+            "id": 11,
+            "title": "Ocean's Eleven",
+            "description": "Less than 24 hours into his parole, charismatic thief Danny Ocean is already rolling out his next plan: In one night, Danny's hand-picked crew of specialists will attempt to steal more than $150 million from three Las Vegas casinos. But to score the cash, Danny risks his chances of reconciling with ex-wife, Tess.",
+            "poster_path": "/hQQCdZrsHtZyR6NbKH2YyCqd2fR.jpg",
+            "tmdb_id": 161
+        },
+        {
+            "id": 12,
+            "title": "Ballerina",
+            "description": "Taking place during the events of John Wick: Chapter 3 \u2013 Parabellum, Eve Macarro begins her training in the assassin traditions of the Ruska Roma.",
+            "poster_path": "/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
+            "tmdb_id": 541671
+        },
+        {
+            "id": 13,
+            "title": "Ballerina",
+            "description": "",
+            "poster_path": "/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
+            "tmdb_id": 12
+        },
+        {
+            "id": 14,
+            "title": "Titanic",
+            "description": "",
+            "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+            "tmdb_id": 4
+        },
+        {
+            "id": 15,
+            "title": "Titanic",
+            "description": "",
+            "poster_path": "/rEPzO9I6LCk6Mxg1X4BsBk6oA3V.jpg",
+            "tmdb_id": 7
+        }
+    ]
+}
