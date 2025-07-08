@@ -6,47 +6,40 @@
             "password": "1234",
             "watched": [
                 {
-                    "movie_id": 4,
-                    "rating": 3
-                },
-                {
-                    "movie_id": 5,
-                    "rating": 1
-                },
-                {
-                    "movie_id": 6,
-                    "rating": null
-                },
-                {
-                    "movie_id": 8,
-                    "rating": null
-                },
-                {
-                    "movie_id": 10,
-                    "rating": 1
-                },
-                {
                     "movie_id": 13,
-                    "rating": null
+                    "rating": 5
                 },
                 {
                     "movie_id": 14,
                     "rating": null
                 },
                 {
-                    "movie_id": 15,
+                    "movie_id": 11,
                     "rating": null
                 },
                 {
-                    "movie_id": 7,
+                    "movie_id": 9,
+                    "rating": null
+                },
+                {
+                    "movie_id": 16,
+                    "rating": null
+                },
+                {
+                    "movie_id": 17,
+                    "rating": null
+                },
+                {
+                    "movie_id": 20,
+                    "rating": null
+                },
+                {
+                    "movie_id": 22,
                     "rating": null
                 }
             ],
             "watchlist": [
-                4,
-                9,
-                11,
-                12
+                20
             ],
             "moods": []
         },
@@ -166,6 +159,55 @@
             "description": "",
             "poster_path": "/rEPzO9I6LCk6Mxg1X4BsBk6oA3V.jpg",
             "tmdb_id": 7
+        },
+        {
+            "id": 16,
+            "title": "F1",
+            "description": "Racing legend Sonny Hayes is coaxed out of retirement to lead a struggling Formula 1 team\u2014and mentor a young hotshot driver\u2014while chasing one more chance at glory.",
+            "poster_path": "/vqBmyAj0Xm9LnS1xe1MSlMAJyHq.jpg",
+            "tmdb_id": 911430
+        },
+        {
+            "id": 17,
+            "title": "Superman",
+            "description": "Superman, a journalist in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.",
+            "poster_path": "/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg",
+            "tmdb_id": 1061474
+        },
+        {
+            "id": 18,
+            "title": "Titanic",
+            "description": "This documentary explores the incredible history of the Titanic. From the crew to its final hours, Titanic chronicles this incredible story like never before. Get ready for Titanic.",
+            "poster_path": "/l7rAG4P16SNFdPmWfTC8ZQydOon.jpg",
+            "tmdb_id": 1124589
+        },
+        {
+            "id": 19,
+            "title": "Titanic: Into the Heart of the Wreck",
+            "description": "The Titanic is under a new threat. Resting at over 12,500 feet below sea level and 380 nautical miles off the coast of Newfoundland, the most famous shipwreck in the world is being consumed by a colony of iron-eating bacteria. This slow and irreversible decay, according to the most concerned experts, will sweep away all the secrets of the mythic liner within a few decades. This documentary details the underwater odyssey of the greatest Titanic expeditions and the evolution of the most scrutinized shipwreck in the world. From the epic discovery of the wreck by a French-American team in 1985 to the exploratory missions led by James Cameron, and to the treasure hunts that brought back over 5,000 vestiges\u2013experience the unequaled thrill of these extreme dives through the eyes of the explorers who have attempted to unlock Titanic\u2019s secrets.",
+            "poster_path": "/sTqXfXdLtVBhWyo1kBG1xgtV946.jpg",
+            "tmdb_id": 777797
+        },
+        {
+            "id": 20,
+            "title": "KPop Demon Hunters",
+            "description": "When K-pop superstars Rumi, Mira and Zoey aren't selling out stadiums, they're using their secret powers to protect their fans from supernatural threats.",
+            "poster_path": "/43c1efKzA1kigNzY0HBzeoXp8LR.jpg",
+            "tmdb_id": 803796
+        },
+        {
+            "id": 21,
+            "title": "Titanic",
+            "description": "In 1912, the Titanic embarks on its inevitable collision course with history. In the wake of the over-spending required to build the largest luxury ship in the world, White Star Line executive Sir Bruce Ismay schemes to reverse the direction of his company's plummeting stock value. Onboard the Titanic, brave German 1st Officer Petersen struggles to convince his self-important British superiors not to overexert the ship's engines.",
+            "poster_path": "/Al7oIXQ4dZAofBTZWm6OiXS3MEa.jpg",
+            "tmdb_id": 11021
+        },
+        {
+            "id": 22,
+            "title": "Titanic",
+            "description": "In 1912, the Titanic embarks on its inevitable collision course with history. In the wake of the over-spending required to build the largest luxury ship in the world, White Star Line executive Sir Bruce Ismay schemes to reverse the direction of his company's plummeting stock value. Onboard the Titanic, brave German 1st Officer Petersen struggles to convince his self-important British superiors not to overexert the ship's engines.",
+            "poster_path": "/Al7oIXQ4dZAofBTZWm6OiXS3MEa.jpg",
+            "tmdb_id": 21
         }
     ]
 }

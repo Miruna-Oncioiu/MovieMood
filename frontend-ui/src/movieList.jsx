@@ -10,7 +10,8 @@ const genreMap = {
   878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western"
 };
 
-export default function MovieList({ movies, title, addTmdbToWatched, addTmdbToWatchlist, currentUser }) {
+export default function MovieList({ movies, title, addTmdbToWatched, addTmdbToWatchlist, currentUser,  removeFromWatched,
+  removeFromWatchlist}) {
   const [selectedMovie, setSelectedMovie] = useState(null);
   
 const handleRating = async (movieId, rating) => {
@@ -124,6 +125,38 @@ const handleRating = async (movieId, rating) => {
               Add to Watchlist
             </button>
           </div>
+          {title === "Watched Movies" && (
+  <button
+    onClick={() => removeFromWatched(selectedMovie.movie_id)}
+    style={{
+      backgroundColor: "#f44336",
+      color: "white",
+      border: "none",
+      padding: "10px",
+      borderRadius: "5px",
+      cursor: "pointer"
+    }}
+  >
+    Remove from Watched
+  </button>
+)}
+
+{title === "Watchlist" && (
+  <button
+    onClick={() => removeFromWatchlist(selectedMovie.movie_id)}
+    style={{
+      backgroundColor: "#f44336",
+      color: "white",
+      border: "none",
+      padding: "10px",
+      borderRadius: "5px",
+      cursor: "pointer"
+    }}
+  >
+    Remove from Watchlist
+  </button>
+)}
+
         </div>
       )}
     </>

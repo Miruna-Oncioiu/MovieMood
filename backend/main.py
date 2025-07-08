@@ -161,11 +161,12 @@ def add_tmdb_to_watched(user_id: int, movie: dict = Body(...)):
             break
     return {"message": "Movie added to watched and removed from watchlist if existed"}
 
-@app.post("/users/{user_id}/watched_tmdb")
-def add_tmdb_to_watched(user_id: int, movie: dict = Body(...)):
+@app.post("/users/{user_id}/watchlist_tmdb")
+def add_to_watchlist(user_id: int, movie: dict = Body(...)):
     movie_id = save_movie_tmdb(movie)
-    update_user_movie_list(user_id, "watched", movie_id)
-    return {"message": "Movie added to watched"}
+    update_user_movie_list(user_id, "watchlist", movie_id)
+    return {"message": "Movie added to watchlist"}
+
 
 @app.get("/recommend_tmdb/{mood}")
 def recommend_tmdb_by_mood(mood: str):
@@ -244,3 +245,35 @@ def search_by_actor(name: str = Query(..., min_length=1)):
     credits_data = credits_resp.json()
     cast_credits = credits_data.get("cast", [])
     return {"results": cast_credits}
+
+@app.delete("/users/{user_id}/watched/{movie_id}")
+def remove_from_watched(user_id: int, movie_id: int):
+    user = get_user_by_id(user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    watched = user.get("watched", [])
+    updated_watched = [item for item in watched if item["movie_id"] != movie_id]
+
+    if len(updated_watched) == len(watched):
+        raise HTTPException(status_code=404, detail="Movie not found in watched list")
+
+    update_user(user_id, {"watched": updated_watched})
+    return {"message": "Movie removed from watched"}
+@app.delete("/users/{user_id}/watchlist/{movie_id}")
+def remove_from_watchlist(user_id: int, movie_id: int):
+    user = get_user_by_id(user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    watchlist = user.get("watchlist", [])
+    print(f"User {user_id} watchlist before removal: {watchlist}")
+    print(f"Trying to remove movie_id: {movie_id}")
+
+    if movie_id not in watchlist:
+        raise HTTPException(status_code=404, detail="Movie not found in watchlist")
+
+    watchlist.remove(movie_id)
+    update_user(user_id, {"watchlist": watchlist})
+    print(f"User {user_id} watchlist after removal: {watchlist}")
+    return {"message": "Movie removed from watchlist"}

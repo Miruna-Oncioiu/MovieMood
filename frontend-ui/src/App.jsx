@@ -142,17 +142,19 @@ function addTmdbToWatched(movie) {
     body: JSON.stringify(movie),
   })
   .then(() => {
-    // Actualizează listele local după modificarea backend-ului
     fetch(`${API_URL}/movies`)
       .then((res) => res.json())
+      .then(enrichMoviesWithTmdb)
       .then(setMovies);
 
     fetch(`${API_URL}/users/${selectedUserId}/watched`)
       .then((res) => res.json())
+      .then(enrichMoviesWithTmdb)
       .then(setWatched);
 
     fetch(`${API_URL}/users/${selectedUserId}/watchlist`)
       .then((res) => res.json())
+      .then(enrichMoviesWithTmdb)
       .then(setWatchlist);
   })
   .catch((err) => {
@@ -168,10 +170,12 @@ function addTmdbToWatched(movie) {
     }).then(() => {
       fetch(`${API_URL}/movies`)
         .then((res) => res.json())
+        .then(enrichMoviesWithTmdb)
         .then(setMovies);
 
       fetch(`${API_URL}/users/${selectedUserId}/watchlist`)
         .then((res) => res.json())
+        .then(enrichMoviesWithTmdb)
         .then(setWatchlist);
     });
   }
@@ -228,12 +232,40 @@ const enrichMoviesWithTmdb = async (moviesFromDb) => {
     moviesFromDb.map(async (movie) => {
       const tmdb = await fetchTmdbDetails(movie.tmdb_id);
       return {
-        ...movie,
         ...tmdb,
+        ...movie,
+        movie_id: movie.id,
       };
     })
   );
 };
+
+
+function removeFromWatched(movieId) {
+  fetch(`${API_URL}/users/${selectedUserId}/watched/${movieId}`, {
+    method: "DELETE",
+  })
+    .then(() => {
+      fetch(`${API_URL}/users/${selectedUserId}/watched`)
+        .then((res) => res.json())
+        .then(enrichMoviesWithTmdb)
+        .then(setWatched);
+    })
+    .catch((err) => console.error("Eroare la ștergerea din watched:", err));
+}
+
+function removeFromWatchlist(movieId) {
+  fetch(`${API_URL}/users/${selectedUserId}/watchlist/${movieId}`, {
+    method: "DELETE",
+  })
+    .then(() => {
+      fetch(`${API_URL}/users/${selectedUserId}/watchlist`)
+        .then((res) => res.json())
+        .then(enrichMoviesWithTmdb)
+        .then(setWatchlist);
+    })
+    .catch((err) => console.error("Eroare la ștergerea din watchlist:", err));
+}
 
   return (
     <div
@@ -360,6 +392,8 @@ const enrichMoviesWithTmdb = async (moviesFromDb) => {
     title="Watched Movies"
     addTmdbToWatched={addTmdbToWatched}
     addTmdbToWatchlist={addTmdbToWatchlist}
+    removeFromWatched={removeFromWatched}
+    removeFromWatchlist={removeFromWatchlist}
     currentUser={currentUser}
   />
 )}
@@ -370,6 +404,8 @@ const enrichMoviesWithTmdb = async (moviesFromDb) => {
     title="Watchlist"
     addTmdbToWatched={addTmdbToWatched}
     addTmdbToWatchlist={addTmdbToWatchlist}
+    removeFromWatched={removeFromWatched}
+    removeFromWatchlist={removeFromWatchlist}
   />
 )}
 
