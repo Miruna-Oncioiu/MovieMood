@@ -30,11 +30,11 @@
                     "rating": null
                 },
                 {
-                    "movie_id": 20,
+                    "movie_id": 22,
                     "rating": null
                 },
                 {
-                    "movie_id": 22,
+                    "movie_id": 23,
                     "rating": null
                 }
             ],
@@ -70,6 +70,14 @@
             "id": 4,
             "username": "miri",
             "password": "1234",
+            "watched": [],
+            "watchlist": [],
+            "moods": []
+        },
+        {
+            "id": 5,
+            "username": "ani22",
+            "password": "12345678910",
             "watched": [],
             "watchlist": [],
             "moods": []
@@ -208,6 +216,13 @@
             "description": "In 1912, the Titanic embarks on its inevitable collision course with history. In the wake of the over-spending required to build the largest luxury ship in the world, White Star Line executive Sir Bruce Ismay schemes to reverse the direction of his company's plummeting stock value. Onboard the Titanic, brave German 1st Officer Petersen struggles to convince his self-important British superiors not to overexert the ship's engines.",
             "poster_path": "/Al7oIXQ4dZAofBTZWm6OiXS3MEa.jpg",
             "tmdb_id": 21
+        },
+        {
+            "id": 23,
+            "title": "KPop Demon Hunters",
+            "description": "When K-pop superstars Rumi, Mira and Zoey aren't selling out stadiums, they're using their secret powers to protect their fans from supernatural threats.",
+            "poster_path": "/43c1efKzA1kigNzY0HBzeoXp8LR.jpg",
+            "tmdb_id": 20
         }
     ]
 }

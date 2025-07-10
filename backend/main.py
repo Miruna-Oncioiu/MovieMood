@@ -1,4 +1,3 @@
-# backend_main.py
 from fastapi import FastAPI, HTTPException, Body, Query
 from fastapi.middleware.cors import CORSMiddleware
 import requests
@@ -63,11 +62,9 @@ def update_user_movie_list(user_id, list_type, movie_id):
         raise HTTPException(status_code=404, detail="User not found")
     movie_list = user.get(list_type, [])
     if list_type == "watched":
-        # watched conține dict-uri
         if not any(item["movie_id"] == movie_id for item in movie_list):
             movie_list.append({"movie_id": movie_id, "rating": None})
     else:
-        # watchlist rămâne lista de id-uri simple
         if movie_id not in movie_list:
             movie_list.append(movie_id)
     update_user(user_id, {list_type: movie_list})
@@ -171,15 +168,34 @@ def add_to_watchlist(user_id: int, movie: dict = Body(...)):
 @app.get("/recommend_tmdb/{mood}")
 def recommend_tmdb_by_mood(mood: str):
     mood_mapping = {
-        "happy": 35,       # Comedy
-        "sad": 18,         # Drama
-        "curious": 9648,   # Mystery
-        "excited": 28      # Action
+        "cheerful": 35,
+        "depression": 18,
+        "anxiety": 53,
+        "calm": 10751,
+        "gloomy": 27,
+        "humorous": 35,
+        "hopeful": 18,
+        "idyllic": 14,
+        "irritability": 80,
+        "joyful": 10402,
+        "melancholic": 10749,
+        "nostalgic": 36,
+        "optimistic": 12,
+        "fearful": 27,
+        "lonely": 18,
+        "peaceful": 16,
+        "whimsical": 14,
+        "angry": 28,
+        "content": 10751,
+        "eerie": 9648,
+        "grateful": 99,
+        "hopeless": 18,
+        "mysterious": 9648,
     }
 
     genre_id = mood_mapping.get(mood.lower())
     if not genre_id:
-        raise HTTPException(status_code=400, detail="Unsupported mood")
+        raise HTTPException(status_code=400, detail=f"Unsupported mood: {mood}")
 
     url = "https://api.themoviedb.org/3/discover/movie"
     params = {
@@ -260,6 +276,7 @@ def remove_from_watched(user_id: int, movie_id: int):
 
     update_user(user_id, {"watched": updated_watched})
     return {"message": "Movie removed from watched"}
+
 @app.delete("/users/{user_id}/watchlist/{movie_id}")
 def remove_from_watchlist(user_id: int, movie_id: int):
     user = get_user_by_id(user_id)
@@ -267,13 +284,9 @@ def remove_from_watchlist(user_id: int, movie_id: int):
         raise HTTPException(status_code=404, detail="User not found")
 
     watchlist = user.get("watchlist", [])
-    print(f"User {user_id} watchlist before removal: {watchlist}")
-    print(f"Trying to remove movie_id: {movie_id}")
-
     if movie_id not in watchlist:
         raise HTTPException(status_code=404, detail="Movie not found in watchlist")
 
     watchlist.remove(movie_id)
     update_user(user_id, {"watchlist": watchlist})
-    print(f"User {user_id} watchlist after removal: {watchlist}")
     return {"message": "Movie removed from watchlist"}

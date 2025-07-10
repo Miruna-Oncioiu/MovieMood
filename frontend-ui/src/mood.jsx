@@ -36,17 +36,30 @@ export default function MoodRecommendations({
       {!selectedMoodMovie && (
         <>
           <h2>Get Recommendations by Mood</h2>
-          <div style={{ marginBottom: 10 }}>
-            {["happy", "sad", "curious", "excited"].map((m) => (
-              <button
-                key={m}
-                onClick={() => getMoodRecommendations(m)}
-                style={{ margin: "0 5px" }}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
+          <div style={{ marginBottom: 10, display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "center" }}>
+  {[
+    "Cheerful", "Depression", "Anxiety", "Calm", "Gloomy",
+    "Humorous", "Hopeful", "Idyllic", "Irritability", "Joyful", "Melancholic",
+    "Nostalgic", "Optimistic", "Fearful", "Lonely", "Peaceful", "Whimsical",
+    "Angry", "Content", "Eerie", "Grateful", "Hopeless", "Mysterious"
+  ].map((mood) => (
+    <button
+      key={mood}
+      onClick={() => getMoodRecommendations(mood.toLowerCase())}
+      style={{
+        padding: "6px 12px",
+        borderRadius: "5px",
+        border: "1px solid #ccc",
+        backgroundColor: "#f5f5f5",
+        cursor: "pointer",
+        textTransform: "capitalize",
+      }}
+    >
+      {mood}
+    </button>
+  ))}
+</div>
+
           <h3>Recommendations</h3>
           <div
             className="mood-grid"
@@ -121,7 +134,6 @@ export default function MoodRecommendations({
               : "N/A"}
           </p>
 
-          {/* Aici afișezi distribuția */}
           <CastInfo tmdb_id={selectedMoodMovie.id} type="movie" />
             
           <div style={{ marginTop: 15, display: "flex", gap: 10 }}>

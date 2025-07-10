@@ -240,7 +240,6 @@ const enrichMoviesWithTmdb = async (moviesFromDb) => {
   );
 };
 
-
 function removeFromWatched(movieId) {
   fetch(`${API_URL}/users/${selectedUserId}/watched/${movieId}`, {
     method: "DELETE",
@@ -348,7 +347,7 @@ function removeFromWatchlist(movieId) {
     <button onClick={() => setActiveSection("watchlist")}>Watchlist</button><br /><br />
     <button onClick={() => setActiveSection("mood")}>Get Recommendations by Mood</button><br /><br />
     <button onClick={() => setActiveSection("search")}>Search</button><br /><br />
-    <button onClick={() => setActiveSection("trending")}>Trending</button>
+    <button onClick={() => setActiveSection("trending")}>Trending</button><br /><br />
     <button onClick={() => setActiveSection("searchByActor")}>Search by Actor</button>
   </div>
 )}
@@ -454,7 +453,6 @@ function removeFromWatchlist(movieId) {
     addTmdbToWatchlist={addTmdbToWatchlist}
   />
 )}
-
         </>
       )}
     </div>
